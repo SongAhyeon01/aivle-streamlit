@@ -46,8 +46,8 @@ def main_page():
 
     # 새로고침 
     def reset_state():
-    for key in st.session_state.keys():
-        del st.session_state[key]
+        for key in st.session_state.keys():
+            del st.session_state[key]
     
     # 방명록 저장
     message = st.chat_input('방명록을 남겨주세요! (띄어쓰기X)')
