@@ -45,7 +45,7 @@ def main_page():
         st.pyplot(fig)
     
     # 방명록 저장
-    message = st.chat_input('방명록을 남겨주세요! (띄워쓰기X)')
+    message = st.chat_input('방명록을 남겨주세요! (띄어쓰기X)')
     if message:
         new_df = pd.DataFrame([message], columns=['message'])
         
