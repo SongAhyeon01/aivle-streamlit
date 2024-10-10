@@ -27,7 +27,7 @@ def main_page():
 
     # 컨테이너에 표시
     with st.container(height=320, border=False):
-        font = 'LG_Smart_UI-Regular.TTF'
+        font = 'LG_Smart_UI-Regular.ttf'
         
         wc = WordCloud(font_path=font,\
             background_color="white", \
