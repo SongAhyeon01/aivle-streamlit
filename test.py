@@ -43,6 +43,11 @@ def main_page():
         plt.axis('off')
         plt.show()
         st.pyplot(fig)
+
+    # 새로고침 
+    def reset_state():
+    for key in st.session_state.keys():
+        del st.session_state[key]
     
     # 방명록 저장
     message = st.chat_input('방명록을 남겨주세요! (띄어쓰기X)')
@@ -52,7 +57,8 @@ def main_page():
         messages_df = pd.concat([messages_df, new_df], ignore_index=True)
         messages_df.to_csv('messages.csv', index=False)
 
-        st.experimental_rerun() # 페이지 새로고침
+        reset_state()
+        #st.experimental_rerun() # 페이지 새로고침
 
 
 # 미디어 페이지
@@ -299,10 +305,10 @@ def map_page():
 
     # 데이터 프레임 보여주기
     st.markdown('#### 한 눈에 보기 👀')
-    st.write(aivle_df, use_container_width=True)
+    st.dataframe(aivle_df, use_container_width=True)
 
 # 사이드바에 페이지 구성
-page_names_to_funcs = {'메인 페이지' : main_page, '미디어 센터' : media_page, '틱택토 게임' : layout_page, '에이블스쿨 위치' : map_page}
+page_names_to_funcs = {'메인 페이지' : main_page, '미디어 센터' : media_page, '틱택토 게임' : layout_page, '차트차트' : chart_page, '에이블스쿨 위치' : map_page}
 
 st.sidebar.header('Sidebar 🦄')
 
