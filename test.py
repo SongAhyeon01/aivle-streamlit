@@ -1,7 +1,6 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
-import plotly.express as px
 import folium
 import random
 import matplotlib.pyplot as plt
